@@ -2,44 +2,163 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="theme-color" content="#07070a"/>
   <title>Wave Nightlife</title>
+
+  <meta name="description" content="Wave — See what’s live tonight. Where people are, where not to go, and what’s actually going down — all in real time." />
+
+  <meta property="og:title" content="Wave Nightlife" />
+  <meta property="og:description" content="See what’s live tonight. Real-time nightlife clips." />
+  <meta property="og:type" content="website" />
+
   <link rel="stylesheet" href="styles.css"/>
 </head>
+
 <body>
 
-  <nav class="nav">
-    <div class="logo">Wave</div>
-    <a href="#" class="nav-btn">Get the App</a>
-  </nav>
+  <!-- BACKGROUND -->
+  <div class="bg">
+    <div class="glow g1"></div>
+    <div class="glow g2"></div>
+    <div class="grain"></div>
+  </div>
 
-  <section class="hero">
-    <h1>See what’s happening around you throughout the night.</h1>
-    <p>Real videos. Real crowds. No more guessing where to go.</p>
-    <div class="cta">
-      <a class="btn primary" href="#">Download on iOS</a>
-      <a class="btn ghost" href="#">Launching at OSU</a>
-    </div>
-  </section>
+  <!-- NAV -->
+  <header class="top">
+    <div class="container nav">
+      <div class="brand">
+        <div class="mark">W</div>
+        <div>
+          <div class="brandname">Wave</div>
+          <div class="brandtag">Nightlife</div>
+        </div>
+      </div>
 
-  <section class="features">
-    <div class="card">
-      <h3>Live venue feeds</h3>
-      <p>See what bars and clubs actually look like right now.</p>
-    </div>
-    <div class="card">
-      <h3>Plan your night</h3>
-      <p>Pick your vibe and find the best move fast.</p>
-    </div>
-    <div class="card">
-      <h3>No wasted Ubers</h3>
-      <p>Stop bouncing between dead spots.</p>
-    </div>
-  </section>
+      <nav class="navlinks">
+        <a href="#why">Why</a>
+        <a href="#see">What you’ll see</a>
+        <a href="#how">How it works</a>
+        <a href="#osu">OSU</a>
+      </nav>
 
-  <footer>
-    <p>© Wave Nightlife</p>
-  </footer>
+      <div class="navcta">
+        <a class="btn ghost" href="#osu">Join launch</a>
+        <a class="btn primary" href="https://example.com" target="_blank">Get the app</a>
+      </div>
 
+      <button class="burger" id="burger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="mobile" id="mobileMenu">
+      <a href="#why">Why</a>
+      <a href="#see">What you’ll see</a>
+      <a href="#how">How it works</a>
+      <a href="#osu">OSU</a>
+      <a class="btn primary" href="https://example.com" target="_blank">Get the app</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container heroGrid">
+
+        <div>
+          <div class="pill">Live nightlife • Real-time clips</div>
+
+          <h1>See what’s live tonight.</h1>
+
+          <p class="subhead">
+            Where people are, where not to go, and what’s actually going down — all in real time.
+          </p>
+
+          <div class="heroCtas">
+            <a class="btn primary" href="https://example.com" target="_blank">Download on iOS</a>
+            <a class="btn ghost" href="#osu">Join OSU rollout</a>
+          </div>
+
+          <div class="micro">
+            Your nightlife, elevated • See it live. Decide fast.
+          </div>
+        </div>
+
+        <!-- MOCK PHONE -->
+        <div class="phoneWrap">
+          <div class="phone">
+            <div class="feedCard">Packed • High St</div>
+            <div class="feedCard">Good vibe • Short North</div>
+            <div class="feedCard">Quiet • Downtown</div>
+            <div class="feedCard">Moment • Campus</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- WHY -->
+    <section id="why" class="section">
+      <div class="container">
+        <h2>Know before you move.</h2>
+        <p class="lead">
+          A quick look beats guessing. Open Wave, get a feel for it, and go from there.
+        </p>
+
+        <div class="grid3">
+          <div class="card">What it looks like</div>
+          <div class="card">Where to go</div>
+          <div class="card">What’s happening</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT YOU'LL SEE -->
+    <section id="see" class="section dark">
+      <div class="container">
+        <h2>What you’ll see</h2>
+        <p class="lead">Everything you need in a few seconds.</p>
+
+        <div class="grid3">
+          <div class="card">Where people are</div>
+          <div class="card">Where not to go</div>
+          <div class="card">What’s going down</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW -->
+    <section id="how" class="section">
+      <div class="container">
+        <h2>How it works</h2>
+
+        <div class="steps">
+          <div>Open Wave</div>
+          <div>Watch quick clips</div>
+          <div>Make the move</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OSU -->
+    <section id="osu" class="section cta">
+      <div class="container">
+        <h2>OSU rollout starts next week</h2>
+        <p class="lead">
+          Want early access or to be part of the launch team?
+        </p>
+
+        <div class="heroCtas">
+          <a class="btn primary" href="https://example.com" target="_blank">Join launch list</a>
+          <a class="btn ghost" href="mailto:contact@thewavenightlife.com">Contact</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
