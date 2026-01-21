@@ -1,0 +1,74 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #0b0b0b;
+  color: white;
+}
+
+a { text-decoration: none; color: inherit; }
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 32px;
+}
+
+.logo { font-weight: 700; font-size: 20px; }
+
+.nav-btn {
+  border: 1px solid white;
+  padding: 8px 14px;
+  border-radius: 8px;
+}
+
+.hero {
+  text-align: center;
+  padding: 100px 24px 80px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.hero h1 {
+  font-size: clamp(36px, 6vw, 56px);
+}
+
+.hero p { opacity: 0.8; }
+
+.cta {
+  margin-top: 32px;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.btn {
+  padding: 14px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.primary { background: white; color: black; }
+.ghost { border: 1px solid white; }
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 24px;
+  padding: 80px 32px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.card {
+  background: #141414;
+  padding: 24px;
+  border-radius: 16px;
+}
+
+footer {
+  text-align: center;
+  padding: 24px;
+  opacity: 0.5;
+}
