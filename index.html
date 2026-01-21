@@ -8,67 +8,96 @@
 
   <meta name="description" content="Wave — See what’s live tonight. Where people are, where not to go, and what’s actually going down — all in real time." />
 
+  <!-- Open Graph -->
   <meta property="og:title" content="Wave Nightlife" />
   <meta property="og:description" content="See what’s live tonight. Real-time nightlife clips." />
   <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <!-- Optional: system fonts already look great; keep this off if you want zero external calls -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css"/>
 </head>
 
 <body>
-
-  <!-- BACKGROUND -->
-  <div class="bg">
+  <!-- Background / vibe -->
+  <div class="bg" aria-hidden="true">
+    <div class="vignette"></div>
     <div class="glow g1"></div>
     <div class="glow g2"></div>
-    <div class="grain"></div>
+    <div class="noise"></div>
   </div>
 
-  <!-- NAV -->
+  <!-- Top nav -->
   <header class="top">
     <div class="container nav">
-      <div class="brand">
-        <div class="mark">W</div>
-        <div>
-          <div class="brandname">Wave</div>
-          <div class="brandtag">Nightlife</div>
-        </div>
-      </div>
+      <a class="brand" href="#top" aria-label="Wave home">
+        <span class="logoMark" aria-hidden="true">W</span>
+        <span class="brandText">
+          <span class="brandName">Wave</span>
+          <span class="brandTag">Nightlife</span>
+        </span>
+      </a>
 
-      <nav class="navlinks">
-        <a href="#why">Why</a>
-        <a href="#see">What you’ll see</a>
+      <nav class="links" aria-label="Primary navigation">
+        <a href="#product">Product</a>
+        <a href="#preview">Live preview</a>
         <a href="#how">How it works</a>
-        <a href="#osu">OSU</a>
+        <a href="#faq">FAQ</a>
       </nav>
 
-      <div class="navcta">
-        <a class="btn ghost" href="#osu">Join launch</a>
-        <a class="btn primary" href="https://example.com" target="_blank">Get the app</a>
+      <div class="navCtas">
+        <a class="btn ghost" href="#launch">OSU rollout</a>
+        <a class="btn primary" href="https://apps.apple.com/us/app/the-wave-nightlife/id6746767592" target="_blank" rel="noopener">Get the app</a>
       </div>
 
-      <button class="burger" id="burger">
-        <span></span><span></span><span></span>
+      <button class="menuBtn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span>
       </button>
     </div>
 
-    <div class="mobile" id="mobileMenu">
-      <a href="#why">Why</a>
-      <a href="#see">What you’ll see</a>
-      <a href="#how">How it works</a>
-      <a href="#osu">OSU</a>
-      <a class="btn primary" href="https://example.com" target="_blank">Get the app</a>
+    <div class="mobileMenu" id="mobileMenu" hidden>
+      <div class="container mobileInner">
+        <a href="#product" class="mLink">Product</a>
+        <a href="#preview" class="mLink">Live preview</a>
+        <a href="#how" class="mLink">How it works</a>
+        <a href="#faq" class="mLink">FAQ</a>
+        <div class="mCtas">
+          <a class="btn ghost" href="#launch">OSU rollout</a>
+          <a class="btn primary" href="https://apps.apple.com/us/app/the-wave-nightlife/id6746767592" target="_blank" rel="noopener">Get the app</a>
+        </div>
+      </div>
     </div>
   </header>
 
-  <main>
+  <main id="top">
 
-    <!-- HERO -->
+    <!-- HERO: cinematic -->
     <section class="hero">
-      <div class="container heroGrid">
+      <div class="heroMedia" aria-hidden="true">
+        <!-- Pure CSS “video wall” vibe (no assets needed) -->
+        <div class="filmGrid">
+          <div class="filmTile t1"></div>
+          <div class="filmTile t2"></div>
+          <div class="filmTile t3"></div>
+          <div class="filmTile t4"></div>
+          <div class="filmTile t5"></div>
+          <div class="filmTile t6"></div>
+          <div class="filmTile t7"></div>
+          <div class="filmTile t8"></div>
+          <div class="filmTile t9"></div>
+        </div>
+        <div class="heroScrim"></div>
+      </div>
 
-        <div>
-          <div class="pill">Live nightlife • Real-time clips</div>
+      <div class="container heroGrid">
+        <div class="heroCopy">
+          <div class="pill">
+            <span class="liveDot"></span>
+            Live nightlife • Real-time clips
+          </div>
 
           <h1>See what’s live tonight.</h1>
 
@@ -76,86 +105,326 @@
             Where people are, where not to go, and what’s actually going down — all in real time.
           </p>
 
-          <div class="heroCtas">
-            <a class="btn primary" href="https://example.com" target="_blank">Download on iOS</a>
-            <a class="btn ghost" href="#osu">Join OSU rollout</a>
+          <div class="ctaRow">
+            <a class="btn primary large" href="https://apps.apple.com/us/app/the-wave-nightlife/id6746767592" target="_blank" rel="noopener">
+              Get Wave on iOS
+            </a>
+            <a class="btn ghost large" href="#preview">
+              See how it feels
+            </a>
           </div>
 
-          <div class="micro">
-            Your nightlife, elevated • See it live. Decide fast.
+          <div class="microRow">
+            <span class="micro">Your nightlife, elevated.</span>
+            <span class="sep">•</span>
+            <span class="micro dim">Fast signal. Real vibe. No guessing.</span>
+          </div>
+
+          <div class="credRow" aria-label="Trust indicators">
+            <div class="cred">
+              <div class="credTop">Packed / chill / dead</div>
+              <div class="credBot">in seconds</div>
+            </div>
+            <div class="cred">
+              <div class="credTop">Real clips</div>
+              <div class="credBot">not rumors</div>
+            </div>
+            <div class="cred">
+              <div class="credTop">Built for campuses</div>
+              <div class="credBot">OSU next</div>
+            </div>
           </div>
         </div>
 
-        <!-- MOCK PHONE -->
-        <div class="phoneWrap">
-          <div class="phone">
-            <div class="feedCard">Packed • High St</div>
-            <div class="feedCard">Good vibe • Short North</div>
-            <div class="feedCard">Quiet • Downtown</div>
-            <div class="feedCard">Moment • Campus</div>
+        <!-- Phone / product preview -->
+        <div class="heroDevice" aria-label="Wave app preview">
+          <div class="device">
+            <div class="deviceTop">
+              <div class="cam"></div>
+              <div class="deviceTitle">
+                <span class="dtMain">Wave</span>
+                <span class="dtSub">Live near you</span>
+              </div>
+              <span class="chip">Tonight</span>
+            </div>
+
+            <div class="deviceBody">
+              <div class="signalRow">
+                <span class="signalLabel">Signal</span>
+                <div class="signalPills" role="tablist" aria-label="Signal selector">
+                  <button class="sigBtn active" data-signal="packed" role="tab" aria-selected="true">Packed</button>
+                  <button class="sigBtn" data-signal="good" role="tab" aria-selected="false">Good</button>
+                  <button class="sigBtn" data-signal="quiet" role="tab" aria-selected="false">Quiet</button>
+                </div>
+              </div>
+
+              <div class="feed" id="feed">
+                <!-- JS will hydrate cards -->
+              </div>
+
+              <div class="deviceFoot">
+                <div class="tab active"></div>
+                <div class="tab"></div>
+                <div class="tab"></div>
+                <div class="tab"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="floating f1">
+            <div class="fTitle">Wave check</div>
+            <div class="fText">one look → you know</div>
+          </div>
+          <div class="floating f2">
+            <div class="fTitle">Live</div>
+            <div class="fText">clips update fast</div>
           </div>
         </div>
+      </div>
 
+      <div class="marquee" aria-hidden="true">
+        <div class="marqueeInner">
+          <span>Wave check</span><span>•</span>
+          <span>Live tonight</span><span>•</span>
+          <span>Know before you move</span><span>•</span>
+          <span>Wave check</span><span>•</span>
+          <span>Live tonight</span><span>•</span>
+          <span>Know before you move</span><span>•</span>
+        </div>
       </div>
     </section>
 
-    <!-- WHY -->
-    <section id="why" class="section">
+    <!-- PRODUCT -->
+    <section id="product" class="section">
       <div class="container">
-        <h2>Know before you move.</h2>
-        <p class="lead">
-          A quick look beats guessing. Open Wave, get a feel for it, and go from there.
-        </p>
+        <div class="sectionHead">
+          <h2>What Wave gives you</h2>
+          <p class="lead">
+            Not a plan. Not a list. Just a clear read on the night.
+          </p>
+        </div>
 
-        <div class="grid3">
-          <div class="card">What it looks like</div>
-          <div class="card">Where to go</div>
-          <div class="card">What’s happening</div>
+        <div class="featureGrid">
+          <article class="featureCard reveal">
+            <div class="icon i1" aria-hidden="true"></div>
+            <h3>Where it’s active</h3>
+            <p>Quick clips that tell you what’s actually happening — without digging.</p>
+          </article>
+
+          <article class="featureCard reveal">
+            <div class="icon i2" aria-hidden="true"></div>
+            <h3>What to skip</h3>
+            <p>A fast look saves you the wrong move. You’ll feel it immediately.</p>
+          </article>
+
+          <article class="featureCard reveal">
+            <div class="icon i3" aria-hidden="true"></div>
+            <h3>Moments worth seeing</h3>
+            <p>The stuff your friends send you after — except you see it live.</p>
+          </article>
+
+          <article class="featureCard reveal wide">
+            <div class="wideTop">
+              <div>
+                <h3>Designed for college nights</h3>
+                <p class="muted">
+                  Short attention. Fast movement. One place goes up, another goes quiet.
+                  Wave is built for that rhythm.
+                </p>
+              </div>
+              <a class="btn ghost" href="#launch">OSU rollout</a>
+            </div>
+            <div class="wideBottom">
+              <div class="miniStat">
+                <div class="msTop">Fast scan</div>
+                <div class="msBot">seconds, not paragraphs</div>
+              </div>
+              <div class="miniStat">
+                <div class="msTop">Live signal</div>
+                <div class="msBot">what it looks like now</div>
+              </div>
+              <div class="miniStat">
+                <div class="msTop">Easy share</div>
+                <div class="msBot">clip → post → move</div>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- WHAT YOU'LL SEE -->
-    <section id="see" class="section dark">
+    <!-- LIVE PREVIEW -->
+    <section id="preview" class="section alt">
       <div class="container">
-        <h2>What you’ll see</h2>
-        <p class="lead">Everything you need in a few seconds.</p>
+        <div class="sectionHead">
+          <h2>Live preview</h2>
+          <p class="lead">A feel for the night, instantly.</p>
+        </div>
 
-        <div class="grid3">
-          <div class="card">Where people are</div>
-          <div class="card">Where not to go</div>
-          <div class="card">What’s going down</div>
+        <div class="previewGrid">
+          <div class="previewPanel reveal">
+            <div class="previewHeader">
+              <div class="phLeft">
+                <div class="pulse"></div>
+                <div>
+                  <div class="phTitle">Tonight’s feed</div>
+                  <div class="phSub">sample moments (replace with real screenshots anytime)</div>
+                </div>
+              </div>
+              <div class="seg">
+                <button class="segBtn active" data-mode="nearby">Nearby</button>
+                <button class="segBtn" data-mode="campus">Campus</button>
+                <button class="segBtn" data-mode="late">Late</button>
+              </div>
+            </div>
+
+            <div class="momentGrid" id="momentGrid" aria-label="Moments grid">
+              <!-- JS populates -->
+            </div>
+          </div>
+
+          <div class="sidePanel reveal">
+            <div class="sideCard">
+              <div class="sideKicker">How people use it</div>
+              <div class="sideTitle">Check. Decide. Move.</div>
+              <p class="sideText">
+                A quick look before you commit. If it’s working, go. If it’s not, you saved the night.
+              </p>
+            </div>
+
+            <div class="sideCard">
+              <div class="sideKicker">Built for real sharing</div>
+              <div class="sideTitle">Short clips, not speeches</div>
+              <p class="sideText">
+                Post what it feels like. Let everyone else interpret it.
+              </p>
+            </div>
+
+            <div class="sideCard callout">
+              <div class="sideTitle">Get Wave</div>
+              <p class="sideText muted">
+                iOS app available now.
+              </p>
+              <a class="btn primary" href="https://apps.apple.com/us/app/the-wave-nightlife/id6746767592" target="_blank" rel="noopener">Open App Store</a>
+              <a class="btn ghost" href="mailto:contact@thewavenightlife.com">contact@thewavenightlife.com</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- HOW -->
+    <!-- HOW IT WORKS -->
     <section id="how" class="section">
       <div class="container">
-        <h2>How it works</h2>
+        <div class="sectionHead">
+          <h2>How it works</h2>
+          <p class="lead">No learning curve.</p>
+        </div>
 
         <div class="steps">
-          <div>Open Wave</div>
-          <div>Watch quick clips</div>
-          <div>Make the move</div>
+          <div class="step reveal">
+            <div class="stepNum">1</div>
+            <div class="stepBody">
+              <div class="stepTitle">Open Wave</div>
+              <div class="stepText">See what’s live around you.</div>
+            </div>
+          </div>
+
+          <div class="step reveal">
+            <div class="stepNum">2</div>
+            <div class="stepBody">
+              <div class="stepTitle">Watch quick clips</div>
+              <div class="stepText">Get a feel for the room in seconds.</div>
+            </div>
+          </div>
+
+          <div class="step reveal">
+            <div class="stepNum">3</div>
+            <div class="stepBody">
+              <div class="stepTitle">Make the move</div>
+              <div class="stepText">Go where it’s working tonight.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ctaBand reveal" id="launch">
+          <div>
+            <div class="ctaKicker">Ohio State rollout</div>
+            <div class="ctaTitle">We’re pushing Wave next week.</div>
+            <div class="ctaText">
+              Want to be part of the launch team, content crew, or early access group?
+            </div>
+          </div>
+          <div class="ctaBtns">
+            <a class="btn primary" href="https://apps.apple.com/us/app/the-wave-nightlife/id6746767592" target="_blank" rel="noopener">Get the app</a>
+            <a class="btn ghost" href="mailto:contact@thewavenightlife.com">Email us</a>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- OSU -->
-    <section id="osu" class="section cta">
+    <!-- FAQ -->
+    <section id="faq" class="section alt">
       <div class="container">
-        <h2>OSU rollout starts next week</h2>
-        <p class="lead">
-          Want early access or to be part of the launch team?
-        </p>
+        <div class="sectionHead">
+          <h2>FAQ</h2>
+          <p class="lead">Quick answers.</p>
+        </div>
 
-        <div class="heroCtas">
-          <a class="btn primary" href="https://example.com" target="_blank">Join launch list</a>
-          <a class="btn ghost" href="mailto:contact@thewavenightlife.com">Contact</a>
+        <div class="faqGrid">
+          <details class="faq reveal">
+            <summary>Is Wave only for college?</summary>
+            <p>It’s built for the pace of campus nights — but it works anywhere people go out.</p>
+          </details>
+
+          <details class="faq reveal">
+            <summary>Do I need to post to use it?</summary>
+            <p>No. Post when you want. Wave still works if you’re just checking the feed.</p>
+          </details>
+
+          <details class="faq reveal">
+            <summary>What makes this different from Instagram stories?</summary>
+            <p>Stories are scattered and late. Wave is organized around the night, live.</p>
+          </details>
+
+          <details class="faq reveal">
+            <summary>How do venues fit in?</summary>
+            <p>Wave is about what the night feels like. Venues can show what’s happening when it matters.</p>
+          </details>
         </div>
       </div>
     </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container footGrid">
+        <div class="footLeft">
+          <div class="footBrand">
+            <span class="logoMark small" aria-hidden="true">W</span>
+            <div>
+              <div class="brandName">Wave</div>
+              <div class="brandTag">Your nightlife, elevated.</div>
+            </div>
+          </div>
+          <div class="footMeta">
+            <a href="mailto:contact@thewavenightlife.com">contact@thewavenightlife.com</a>
+            <span class="sep">•</span>
+            <a href="https://apps.apple.com/us/app/the-wave-nightlife/id6746767592" target="_blank" rel="noopener">App Store</a>
+          </div>
+        </div>
+
+        <div class="footRight">
+          <a href="#product">Product</a>
+          <a href="#preview">Live preview</a>
+          <a href="#how">How it works</a>
+          <a href="#faq">FAQ</a>
+        </div>
+      </div>
+
+      <div class="container footBottom">
+        <span class="dim">© <span id="year"></span> Wave Nightlife</span>
+      </div>
+    </footer>
 
   </main>
 
