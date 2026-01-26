@@ -144,6 +144,27 @@ document.addEventListener('mousemove', (e) => {
   cursor.style.top = e.clientY + 'px';
 });
 
+// Rotating Screenshots in Hero
+let currentScreenshot = 0;
+const screenshots = document.querySelectorAll('.rotatingScreenshot');
+const screenshotInterval = 3000; // 3 seconds
+
+function rotateScreenshots() {
+  if (screenshots.length === 0) return;
+  
+  screenshots.forEach((img, index) => {
+    img.classList.remove('active');
+  });
+  
+  currentScreenshot = (currentScreenshot + 1) % screenshots.length;
+  screenshots[currentScreenshot].classList.add('active');
+}
+
+// Start rotating screenshots if they exist
+if (screenshots.length > 0) {
+  setInterval(rotateScreenshots, screenshotInterval);
+}
+
 // Initialize on DOM load
 document.addEventListener('DOMContentLoaded', () => {
   // Trigger initial reveal for elements in viewport
@@ -154,4 +175,9 @@ document.addEventListener('DOMContentLoaded', () => {
       el.classList.add('revealed');
     }
   });
+  
+  // Start screenshot rotation
+  if (screenshots.length > 0) {
+    setInterval(rotateScreenshots, screenshotInterval);
+  }
 });
