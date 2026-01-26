@@ -43,7 +43,8 @@
 
       <nav class="links" aria-label="Primary navigation">
         <a href="#product">Features</a>
-        <a href="#preview">Live feed</a>
+        <a href="#preview">Screenshots</a>
+        <a href="#venues">For Venues</a>
         <a href="#how">How it works</a>
         <a href="#faq">FAQ</a>
       </nav>
@@ -61,7 +62,8 @@
     <div class="mobileMenu" id="mobileMenu" hidden>
       <div class="container mobileInner">
         <a href="#product" class="mLink">Features</a>
-        <a href="#preview" class="mLink">Live feed</a>
+        <a href="#preview" class="mLink">Screenshots</a>
+        <a href="#venues" class="mLink">For Venues</a>
         <a href="#how" class="mLink">How it works</a>
         <a href="#faq" class="mLink">FAQ</a>
         <div class="mCtas">
@@ -136,7 +138,7 @@
           </div>
         </div>
 
-        <!-- Phone / product preview -->
+        <!-- Phone / product preview with rotating screenshots -->
         <div class="heroDevice" aria-label="Wave app preview">
           <div class="device">
             <div class="deviceTop">
@@ -149,24 +151,12 @@
             </div>
 
             <div class="deviceBody">
-              <div class="signalRow">
-                <span class="signalLabel">Explore</span>
-                <div class="signalPills" role="tablist" aria-label="Explore tabs">
-                  <button class="sigBtn active" data-signal="explore" role="tab" aria-selected="true">Explore</button>
-                  <button class="sigBtn" data-signal="live" role="tab" aria-selected="false">Live</button>
-                  <button class="sigBtn" data-signal="updates" role="tab" aria-selected="false">Updates</button>
-                </div>
-              </div>
-
-              <div class="feed" id="feed">
-                <!-- JS will hydrate cards -->
-              </div>
-
-              <div class="deviceFoot">
-                <div class="tab active"></div>
-                <div class="tab"></div>
-                <div class="tab"></div>
-                <div class="tab"></div>
+              <div class="appScreenshotRotator" id="heroScreenshot">
+                <img src="images/explore-screen.png" alt="Wave Explore - Connect with your city" class="rotatingScreenshot active" />
+                <img src="images/live-screen.png" alt="Wave Live - Real-time videos" class="rotatingScreenshot" />
+                <img src="images/social-screen.png" alt="Wave Social - Connect with friends" class="rotatingScreenshot" />
+                <img src="images/plan-screen.png" alt="Wave Plan - Plan your night" class="rotatingScreenshot" />
+                <img src="images/search-screen.png" alt="Wave Search - Find venues" class="rotatingScreenshot" />
               </div>
             </div>
           </div>
@@ -252,69 +242,124 @@
       </div>
     </section>
 
-    <!-- LIVE PREVIEW -->
-    <section id="preview" class="section alt">
+    <!-- APP SHOWCASE -->
+    <section id="preview" class="section showcase">
       <div class="container">
         <div class="sectionHead">
-          <h2>Live feed preview</h2>
-          <p class="lead">Real moments. Real people. Real vibe.</p>
+          <h2>See Wave in action</h2>
+          <p class="lead">Real screenshots. Real features. Real nightlife.</p>
         </div>
 
-        <div class="previewGrid">
-          <div class="previewPanel reveal">
-            <div class="previewHeader">
-              <div class="phLeft">
-                <div class="pulse"></div>
-                <div>
-                  <div class="phTitle">Tonight's feed</div>
-                  <div class="phSub">live videos and posts (replace with real screenshots anytime)</div>
-                </div>
-              </div>
-              <div class="seg">
-                <button class="segBtn active" data-mode="live">Live</button>
-                <button class="segBtn" data-mode="explore">Explore</button>
-                <button class="segBtn" data-mode="updates">Updates</button>
-              </div>
-            </div>
-
-            <div class="momentGrid" id="momentGrid" aria-label="Moments grid">
-              <!-- Replace these with actual App Store screenshots from https://apps.apple.com/us/app/the-wave-nightlife/id6746767592 -->
-              <div class="momentCard">
-                <img src="images/app-screenshot-1.png" alt="Wave app - Live feed" class="appScreenshot" loading="lazy" />
-              </div>
-              <div class="momentCard">
-                <img src="images/app-screenshot-2.png" alt="Wave app - Explore venues" class="appScreenshot" loading="lazy" />
-              </div>
-              <div class="momentCard">
-                <img src="images/app-screenshot-3.png" alt="Wave app - Plan your night" class="appScreenshot" loading="lazy" />
-              </div>
+        <div class="showcaseGrid reveal">
+          <div class="showcaseCard large">
+            <div class="cardLabel">Explore</div>
+            <img src="images/explore-screen.png" alt="Wave Explore - Discover venues and plan your night" class="showcaseImage" />
+            <div class="cardOverlay">
+              <h3>Explore your city</h3>
+              <p>See trending venues, plan your night, and discover what's happening around you.</p>
             </div>
           </div>
 
-          <div class="sidePanel reveal">
-            <div class="sideCard">
-              <div class="sideKicker">How people use it</div>
-              <div class="sideTitle">Connect with your city.</div>
-              <p class="sideText">
-                Check where the energy is before you commit. See funny moments, honest callouts, and where people are actually gathering. Make better decisions about your night.
-              </p>
+          <div class="showcaseCard">
+            <div class="cardLabel">Live</div>
+            <img src="images/live-screen.png" alt="Wave Live - Real-time videos from venues" class="showcaseImage" />
+            <div class="cardOverlay">
+              <h3>Live videos</h3>
+              <p>See what's happening right now through real-time clips from venues.</p>
             </div>
+          </div>
 
-            <div class="sideCard">
-              <div class="sideKicker">Real-time updates</div>
-              <div class="sideTitle">Authentic moments</div>
-              <p class="sideText">
-                Unfiltered clips from venues. Funny chaos, real vibes, and honest takes. Share anonymously or publicly — whatever feels right.
-              </p>
+          <div class="showcaseCard">
+            <div class="cardLabel">Social</div>
+            <img src="images/social-screen.png" alt="Wave Social - Connect with friends" class="showcaseImage" />
+            <div class="cardOverlay">
+              <h3>Social feed</h3>
+              <p>Stay connected with posts from venues, events, and friends.</p>
             </div>
+          </div>
 
-            <div class="sideCard callout">
-              <div class="sideTitle">Get Wave</div>
-              <p class="sideText muted">
-                iOS app available now.
-              </p>
-              <a class="btn primary" href="https://apps.apple.com/us/app/the-wave-nightlife/id6746767592" target="_blank" rel="noopener">Open App Store</a>
-              <a class="btn ghost" href="mailto:contact@thewavenightlife.com">contact@thewavenightlife.com</a>
+          <div class="showcaseCard">
+            <div class="cardLabel">Plan</div>
+            <img src="images/plan-screen.png" alt="Wave Plan - Plan your night" class="showcaseImage" />
+            <div class="cardOverlay">
+              <h3>Plan your night</h3>
+              <p>Choose what you're in the mood for and connect with venues instantly.</p>
+            </div>
+          </div>
+
+          <div class="showcaseCard">
+            <div class="cardLabel">Search</div>
+            <img src="images/search-screen.png" alt="Wave Search - Find the perfect venue" class="showcaseImage" />
+            <div class="cardOverlay">
+              <h3>Find venues</h3>
+              <p>Search by vibe, music, crowd, location, and more.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VENUES & PROMOTERS -->
+    <section id="venues" class="section alt venuesSection">
+      <div class="container">
+        <div class="sectionHead">
+          <h2>For venues & promoters</h2>
+          <p class="lead">Reach people directly. Book talent. Grow your nightlife business.</p>
+        </div>
+
+        <div class="venuesGrid">
+          <div class="venueCard reveal">
+            <div class="venueIcon">📍</div>
+            <h3>Reach people directly</h3>
+            <p>Connect with people who are actively looking for what you offer. When someone creates a plan that matches your venue, you get notified instantly.</p>
+            <ul class="venueFeatures">
+              <li>Real-time activity signals</li>
+              <li>Direct connection with potential customers</li>
+              <li>See what people are looking for</li>
+            </ul>
+          </div>
+
+          <div class="venueCard reveal">
+            <div class="venueIcon">🎵</div>
+            <h3>Book promoters & talent</h3>
+            <p>Wave is a platform built around nightlife. Find promoters, DJs, and talent in your area. Book them directly through the app.</p>
+            <ul class="venueFeatures">
+              <li>Integrated booking system</li>
+              <li>Find talent by location and style</li>
+              <li>Built for nightlife professionals</li>
+            </ul>
+          </div>
+
+          <div class="venueCard reveal">
+            <div class="venueIcon">📱</div>
+            <h3>Share what's happening</h3>
+            <p>Post updates, events, and live moments. Show people what's actually happening at your venue right now.</p>
+            <ul class="venueFeatures">
+              <li>Live video posts</li>
+              <li>Event announcements</li>
+              <li>Real-time updates</li>
+            </ul>
+          </div>
+
+          <div class="venueCard reveal">
+            <div class="venueIcon">📊</div>
+            <h3>See what's trending</h3>
+            <p>Understand what people want. See trending activities, popular times, and what's working in your area.</p>
+            <ul class="venueFeatures">
+              <li>Trending insights</li>
+              <li>Activity analytics</li>
+              <li>Market intelligence</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="promoterCTA reveal">
+          <div class="promoterContent">
+            <h3>Ready to grow your nightlife business?</h3>
+            <p>Join Wave as a venue or promoter and start connecting with people who are looking for exactly what you offer.</p>
+            <div class="promoterBtns">
+              <a class="btn primary" href="mailto:contact@thewavenightlife.com?subject=Venue/Promoter Inquiry">Get started</a>
+              <a class="btn ghost" href="#faq">Learn more</a>
             </div>
           </div>
         </div>
@@ -428,7 +473,8 @@
 
         <div class="footRight">
           <a href="#product">Features</a>
-          <a href="#preview">Live feed</a>
+          <a href="#preview">Screenshots</a>
+          <a href="#venues">For Venues</a>
           <a href="#how">How it works</a>
           <a href="#faq">FAQ</a>
         </div>
