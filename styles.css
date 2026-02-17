@@ -85,7 +85,7 @@ body {
 .g1 {
   width: 600px;
   height: 600px;
-  background: var(--neon-purple);
+  background: var(--purple-luxury);
   top: -200px;
   left: -200px;
   animation-delay: 0s;
@@ -94,7 +94,7 @@ body {
 .g2 {
   width: 500px;
   height: 500px;
-  background: var(--neon-cyan);
+  background: var(--accent-primary);
   bottom: -150px;
   right: -150px;
   animation-delay: 4s;
@@ -429,9 +429,9 @@ body {
 .liveDot {
   width: 8px;
   height: 8px;
-  background: var(--neon-cyan);
+  background: var(--accent-primary);
   border-radius: 50%;
-  box-shadow: 0 0 10px var(--neon-cyan);
+  box-shadow: 0 0 10px var(--accent-primary);
   animation: pulse 2s ease-in-out infinite;
 }
 
@@ -1347,9 +1347,9 @@ h1::after {
 .pulse {
   width: 12px;
   height: 12px;
-  background: var(--neon-cyan);
+  background: var(--accent-primary);
   border-radius: 50%;
-  box-shadow: 0 0 15px var(--neon-cyan);
+  box-shadow: 0 0 15px var(--accent-primary);
   animation: pulse 2s ease-in-out infinite;
 }
 
